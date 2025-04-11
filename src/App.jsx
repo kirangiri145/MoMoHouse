@@ -16,6 +16,7 @@ import Sucess from './Payment/Sucess'
 import Failure from './Payment/Failure'
 import Signup from './Auth/Signup'
 import Profile from './Auth/Profile'
+import ProtectedRoutes from './Auth/ProtctedRoutes'
 
 function App() {
   return (
