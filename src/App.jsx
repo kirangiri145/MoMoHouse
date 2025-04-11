@@ -23,11 +23,11 @@ function App() {
       <Navigation />
       <Routes>
 
-        <Route path='/' element={<Home />} />
+        <Route path='/' element={<ProtectedRoutes  components={ <Home/>}/>}/>
         <Route path='/about' element={<About />} />
         <Route path='/allergyadvice' element={<AllergyAdvice />} />
         <Route path='/contact' element={<Contact />} />
-        <Route path='/menu' element={<Menu />} />
+        <Route path="/menu" element={<ProtectedRoutes  components={ <Menu/>}/>}/>
         <Route path='/services' element={<Services />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
