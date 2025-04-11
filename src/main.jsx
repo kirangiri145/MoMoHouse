@@ -12,26 +12,27 @@ createRoot(document.getElementById("root")).render(
     <CartProvider>
       <Auth0Provider
         domain="dev-yfzi7kdprn128ubs.us.auth0.com"
-        clientId="EmV1Sf2Y1wTEguP8hXTD4YiOhNzcqhUZ"
+        clientId="Xf9CaTE1aQebSwOfzkJyniZWwPnPY9b0"
         authorizationParams={{
-          redirect_uri: window.location.origin,
+          redirect_uri: window.location.origin
         }}
       >
         <App />
-      </Auth0Provider>
-    <ToastContainer
-      position="top-right"
-      autoClose={5000}
-      hideProgressBar={false}
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss
-      draggable
-      pauseOnHover
-      theme="light"
-      transition={Bounce}
-    />
+      </Auth0Provider>,
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="light"
+        transition={Bounce}
+      />
     </CartProvider>
 
   </BrowserRouter>
