@@ -67,14 +67,14 @@ function Payment() {
             type="hidden"
             id="success_url"
             name="success_url"
-            value="https://nepal-momo-house.vercel.app/sucess"
+            value="https://mo-mo-house-vepn.vercel.app/sucess"
             required
           />
           <input
             type="hidden"
             id="failure_url"
             name="failure_url"
-            value="http://localhost:5173/failure"
+            value="https://mo-mo-house-vepn.vercel.app/failure"
             required
           />
           <input
