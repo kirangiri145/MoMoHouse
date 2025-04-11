@@ -6,7 +6,9 @@ import QualityFood from "../assets/Home/QualityFood.png";
 import PrivateParty from "../assets/Home/PrivateParty.png";
 import Categring from "../assets/Home/Categring.png";
 import Waiter from "../assets/Home/Waiter.png";
+
 import Women from "../assets/Home/Women.png";
+import Circle from "../assets/Home/Circle.png";
 
 import { BsArrowRightShort } from "react-icons/bs";
 import NavigateToMenu from "../Components/NavigateToMenu";
@@ -80,7 +82,7 @@ function Home() {
             src={Momo}
             alt="Momo"
           />
-          <img className="h-96  -mt-4   " src={circle} alt="circle" />
+          <img className="h-96  -mt-4   " src={Circle} alt="circle" />
         </div>
       </div>
 
@@ -107,9 +109,9 @@ function Home() {
             </p>
 
             <NavLink to="/menu">
-            <button className="flex items-center gap-2 bg-[#0C6967] text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
-              Explore Our Story <BsArrowRightShort className="text-xl" />
-            </button>
+              <button className="flex items-center gap-2 bg-[#0C6967] text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
+                Explore Our Story <BsArrowRightShort className="text-xl" />
+              </button>
             </NavLink>
           </div>
         </div>
@@ -279,9 +281,9 @@ function Home() {
         </div>
         <div className="mt-8">
           <NavLink to="/menu">
-          <button className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
-            Explore Our Services <BsArrowRightShort className="text-xl" />
-          </button>
+            <button className="flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
+              Explore Our Services <BsArrowRightShort className="text-xl" />
+            </button>
           </NavLink>
         </div>
       </div>
