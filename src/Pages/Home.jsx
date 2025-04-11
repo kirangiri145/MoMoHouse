@@ -1,4 +1,4 @@
-import circle from "../assets/Home/circle.png";
+
 import Momo from "../assets/Home/Momo.png";
 import OneBg from "../assets/Home/OneBg.png";
 import Man from "../assets/Home/Man.png";
