@@ -39,7 +39,7 @@ function Navigation() {
         <NavLink to="/allergyadvice" className=" hover:text-orange-700 ">
           AllergyAdvice
         </NavLink>
-      
+
 
         {isAuthenticated ? (
           <button
@@ -53,8 +53,8 @@ function Navigation() {
         ) : (
           <NavLink to="/login" className="hover:text-black">
             Login
-  </NavLink>
-)}
+          </NavLink>
+        )}
 
         <NavLink to="/cartPage" className="relative  hover:text-orange-700 ">
           <span className="absolute -top-4 mt-2 -right-2 bg-red-500 text-white text-xs font-bold w-5 h-5 flex items-center justify-center rounded-full">
@@ -96,7 +96,7 @@ function Navigation() {
         <NavLink className="h-7 w-7 rounded-full overflow-hidden" to="/profile">
           <img
             src={user?.picture}
-            alt="profile"
+            alt=""
             className="h-full w-full object-cover"
           />
         </NavLink>
