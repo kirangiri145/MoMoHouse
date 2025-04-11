@@ -25,11 +25,11 @@ function App() {
       <Routes>
 
         <Route path='/' element={<ProtectedRoutes  components={ <Home/>}/>}/>
-        <Route path='/about' element={<ProtectedRoutes  components={ <Home/>}/>} />
-        <Route path='/allergyadvice' element={<ProtectedRoutes  components={ <Home/>}/>} />
+        <Route path='/about' element={ <Home/>}/>
+        <Route path='/allergyadvice' element={ <Home/>} />
         <Route path='/contact' element={<Contact />} />
         <Route path="/menu" element={ <Menu/>}/>
-        <Route path='/services' element={<ProtectedRoutes  components={ <Home/>}/>} />
+        <Route path='/services' element={ <Home/>}/>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/payment' element={<Payment />} />
