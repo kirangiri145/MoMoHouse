@@ -74,10 +74,7 @@ function About() {
               <span className="text-orange-500">made with love</span>
             </h1>
             <p className="text-gray-600 mt-3 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Lectus faucibus lorem ac
-              adipiscing. Leo odio tincidunt ipsum magna lacus viverra
-              tincidunt. Viverra aliquet sollicitudin eget dapibus. Vestibulum
-              velit viverra gravida consectetur sed facilisis ut morbi.
+            Every momo comes with our house-made chutney – a bold, garlicky, chili-infused sauce that makes each bite unforgettable. We also offer a mild version if you’re not into too much heat!
             </p>
           </div>
           <div className="flex gap-4">
@@ -109,10 +106,7 @@ function About() {
               <span className="text-orange-500">our handcrafted momos</span>
             </h1>
             <p className="text-gray-600 mt-3 leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur. Lectus faucibus lorem ac
-              adipiscing. Leo odio tincidunt ipsum magna lacus viverra
-              tincidunt. Viverra aliquet sollicitudin eget dapibus. Vestibulum
-              velit viverra gravida consectetur sed facilisis ut morbi.
+            Momos are more than just dumplings — they’re a taste of the Himalayas, a bite-sized journey into the heart of Nepali and Tibetan cuisine. Each momo is handcrafted with love, sealed with spice, and steamed or fried to perfection.
             </p>
           </div>
         </div>
