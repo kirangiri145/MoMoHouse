@@ -16,7 +16,7 @@ import Sucess from './Payment/Sucess'
 import Failure from './Payment/Failure'
 import Signup from './Auth/Signup'
 import Profile from './Auth/Profile'
-import ProtectedRoutes from './Auth/ProtctedRoutes'
+// import ProtectedRoutes from './Auth/ProtctedRoutes'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
       <Navigation />
       <Routes>
 
-        <Route path='/' element={<ProtectedRoutes  components={ <Home/>}/>}/>
+        <Route path='/' element={ <Home/>}/>
         <Route path='/about' element={ <About/>}/>
         <Route path='/allergyadvice' element={ <AllergyAdvice/>} />
         <Route path='/contact' element={<Contact />} />
@@ -36,11 +36,12 @@ function App() {
         <Route path='/sucess' element={<Sucess />} />
         <Route path='/failure' element={<Failure />} />
         <Route path='/productdescription/:id' element={<ProductDescription />} />
-        <Route path='/cartPage' element={ <Home/>}/>
+        <Route path='/cartPage' element={< CartPage/>}/>
         <Route path='/profile' element={<Profile/>} />
       </Routes>
       <Footer />
     </div>
+    // {<ProtectedRoutes  components={ <Home/>}/>}/>
   )
 }
 
