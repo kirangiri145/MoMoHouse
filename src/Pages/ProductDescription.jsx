@@ -2,19 +2,20 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { CartContext } from "../Context/CartProvider";
 import { Bounce, toast } from "react-toastify";
+import { motion } from "framer-motion";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function ProductDescription() {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [quantity, setQuantity] = useState(1);
-  
-   const {dispatch} = useContext(CartContext)
 
+  const { dispatch } = useContext(CartContext);
   const [cart, setCart] = useState(
     JSON.parse(localStorage.getItem("cart")) || []
   );
-
   const navigate = useNavigate();
 
   const getProduct = async () => {
@@ -29,93 +30,62 @@ function ProductDescription() {
     }
   };
 
-  let totalPrice = product?.caloriesPerServing*quantity;
+  let totalPrice = product?.caloriesPerServing * quantity;
 
   useEffect(() => {
     getProduct();
+    AOS.init(); 
   }, [id]);
 
-  const increment = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-  };
+  const increment = () => setQuantity((prev) => prev + 1);
+  const decrement = () => quantity > 1 && setQuantity((prev) => prev - 1);
 
-  const decrement = () => {
-    if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-    }
-  };
-
-  const addToCart = () => {
-    const newProduct = {
-      id: product.id,
-      name: product.name,
-      price: product.caloriesPerServing,
-      quantity,
-      image: product.images?.[0] || "https://via.placeholder.com/150",
-    };
-
-    const updatedCart = [...cart, newProduct];
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    alert("Product added to cart!");
-  };
-  const buyNow = () => {
-    if (!product) {
-      console.log("Product not available for checkout");
-      return;
-    }
-
-    const newProduct = {
-      id: product.id,
-      name: product.name,
-      price: product.caloriesPerServing,
-      quantity,
-      image: product.images?.[0] || "https://via.placeholder.com/150",
-    };
-
-    const updatedCart = [...cart, newProduct];
-    setCart(updatedCart);
-    localStorage.setItem("cart", JSON.stringify(updatedCart));
-    navigate(`/payment/${product.id}`);
-  };
-
-  if (loading) {
-    return <div className="pt-16 text-center text-xl">Loading...</div>;
-  }
-
-  if (!product) {
-    return <div className="pt-16 text-center text-xl">Product not found</div>;
-  }
+  if (loading) return <div className="pt-16 text-center text-xl">Loading...</div>;
+  if (!product) return <div className="pt-16 text-center text-xl">Product not found</div>;
 
   return (
-    <div>
-      <div className="pt-20 w-[600px] ml-52">
-        <div className="flex shadow-xl shadow-gray-500 ml-40 gap-x-2 rounded-2xl">
-          <div>
-            <img
-              className="w-100 rounded-2xl ml-2 p-2"
+    <div className="pt-20 px-4 md:px-10">
+      <div className="max-w-5xl mx-auto">
+        <div
+          className="flex flex-col lg:flex-row shadow-xl shadow-gray-500 gap-x-4 rounded-2xl p-4 md:p-6"
+          data-aos="fade-up"
+        >
+          <div className="flex-shrink-0 w-full lg:w-1/2">
+            <motion.img
+              className="w-full h-auto rounded-2xl object-cover"
               src={
                 product?.image ||
                 product?.images?.[0] ||
                 "https://via.placeholder.com/150"
               }
               alt={product?.name || "Product"}
+              loading="lazy" 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1 }}
             />
           </div>
-          <div className="py-3 space-y-3 w-[500px]">
-            <h1 className="text-3xl font-bold">{product?.name}</h1>
-            <p className="text-orange-500">
-              Rating: {product?.rating || "N/A"}
-            </p>
-            <p className="text-emerald-800 ">
+
+          <div className="space-y-4 mt-4 lg:mt-0 w-full lg:w-1/2">
+            <motion.h1
+              className="text-2xl md:text-3xl font-bold"
+              initial={{ y: 50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+            >
+              {product?.name}
+            </motion.h1>
+            <p className="text-orange-500">Rating: {product?.rating || "N/A"}</p>
+            <p className="text-emerald-800">
               Description: {product?.description || "N/A"}
             </p>
-            <p className="text-3xl text-amber-500">
+            <p className="text-2xl text-amber-500">
               Rs. {product?.caloriesPerServing || "N/A"}
             </p>
-            <div className="flex items-center">
+
+            <div className="flex items-center gap-3">
               <p>Quantity</p>
-              <div className="ml-7 flex items-center gap-2">
+              <div className="flex items-center gap-2">
                 <button
                   className="bg-gray-300 h-7 w-7 hover:bg-gray-500 hover:text-white"
                   onClick={decrement}
@@ -134,49 +104,50 @@ function ProductDescription() {
               </div>
             </div>
 
-            <div className="mt-5">
-              <button
-               onClick={()=>{
-                navigate("/payment",{
-                  state:{
-                    totalPrice:totalPrice,
-                  }
-                });
-              }}
-              
-                className="bg-blue-700 text-white w-50 p-3 rounded-md mb-4"
+            <div className="mt-5 flex flex-col sm:flex-row gap-4">
+              <motion.button
+                onClick={() => {
+                  navigate("/payment", {
+                    state: {
+                      totalPrice: totalPrice,
+                    },
+                  });
+                }}
+                className="bg-blue-700 text-white w-full sm:w-auto px-5 py-2 rounded-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Buy Now
-              </button>
-              <button
+              </motion.button>
 
-               onClick={()=>{
-                dispatch ({type :"AddToCart", payload:product})
-
-                toast.success("Product added to cart!", {
-                  position: "top-center",
-                  autoClose: 1500,
-                  hideProgressBar: false,
-                  closeOnClick: true,
-                  pauseOnHover: true,
-                  draggable: true,
-                  theme: "light",
-                  transition: Bounce,
-                });
-               }}
-               
-                className="bg-orange-700 text-white  mb-1 w-50 p-3 rounded-md"
-      
+              <motion.button
+                onClick={() => {
+                  dispatch({ type: "AddToCart", payload: product });
+                  toast.success("Product added to cart!", {
+                    position: "top-center",
+                    autoClose: 1500,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    theme: "light",
+                    transition: Bounce,
+                  });
+                }}
+                className="bg-orange-700 text-white w-full sm:w-auto px-5 py-2 rounded-md"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
               >
                 Add To Cart
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
-        <div className="pl-30 ml-10">
-          <p className="text-emerald-800 text-[15px] m-3">
-            <span className="font-semibold text-amber-600">Instructions </span>
-            : {product?.instructions || "N/A"}
+
+        <div className="mt-6 px-2">
+          <p className="text-emerald-800 text-sm md:text-base">
+            <span className="font-semibold text-amber-600">Instructions</span>:{" "}
+            {product?.instructions || "N/A"}
           </p>
         </div>
       </div>

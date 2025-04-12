@@ -28,7 +28,7 @@ function Contact() {
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-            <h1 className="text-lg font-semibold text-gray-800 flex gap-2">
+            <h1 className="text-lg font-semibold text-gray-800 flex gap-2 justify-center md:justify-start">
               <FaLocationDot size={32} className="text-amber-600" />
               Location
             </h1>
@@ -37,14 +37,14 @@ function Contact() {
             </p>
           </div>
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-            <h1 className="text-lg font-semibold text-gray-800 flex gap-2">
+            <h1 className="text-lg font-semibold text-gray-800 flex gap-2 justify-center md:justify-start">
               <FiPhoneCall size={32} className="text-amber-600" />
               Phone
             </h1>
             <p className="text-gray-600 mt-2">
               <span className="text-green-800 font-bold"> Mobile:</span> (+977)
               980 5689789 <br />
-              <span className="block ml-16">(+977) 9841 275897</span>
+              <span className="block md:ml-16">(+977) 9841 275897</span>
             </p>
             <p className="text-gray-600 mt-2">
               <span className="text-green-800 font-bold"> Tel:</span>{" "}
@@ -52,7 +52,7 @@ function Contact() {
             </p>
           </div>
           <div className="bg-gray-100 p-6 rounded-lg shadow-md">
-            <h1 className="text-lg font-semibold text-gray-800 flex gap-2">
+            <h1 className="text-lg font-semibold text-gray-800 flex gap-2 justify-center md:justify-start">
               <IoIosTime size={32} className="text-amber-600" />
               Service Time
             </h1>
@@ -81,10 +81,15 @@ function Contact() {
         </div>
         <div className="bg-white shadow-lg p-8 rounded-lg">
           <div className="mb-6 text-center">
-            <h1 className="text-3xl font-bold text-gray-800">Contact <span className="text-amber-700">Us</span></h1>
+            <h1 className="text-3xl font-bold text-gray-800">
+              Contact <span className="text-amber-700">Us</span>
+            </h1>
             <p className="text-gray-600 mt-2 font-semibold">
-              If you have any queries, send us a message. Our friendly team
-              would love to hear from you.
+              Momo is a type of South Asian dumpling; it's a beloved delicacy
+              in Nepal, made with a thin flour wrapper filled with seasoned
+              meat or vegetables. Steamed or fried, momos are served with a
+              spicy dipping sauce and are perfect for every craving—quick,
+              tasty, and satisfying!
             </p>
           </div>
 
@@ -95,7 +100,8 @@ function Contact() {
                   First Name
                 </label>
                 <input
-                  type="text" placeholder="Enter First Name"
+                  type="text"
+                  placeholder="Enter First Name"
                   className="border p-2 rounded w-full focus:ring focus:ring-orange-300"
                 />
               </div>
@@ -104,7 +110,8 @@ function Contact() {
                   Last Name
                 </label>
                 <input
-                  type="text" placeholder="Enter Last Name"
+                  type="text"
+                  placeholder="Enter Last Name"
                   className="border p-2 rounded w-full focus:ring focus:ring-orange-300"
                 />
               </div>
@@ -112,7 +119,8 @@ function Contact() {
             <div>
               <label className="block text-gray-700 font-semibold">Email</label>
               <input
-                type="email" placeholder="Enter Email"
+                type="email"
+                placeholder="Enter Email"
                 className="border p-2 rounded w-full focus:ring focus:ring-orange-300"
               />
             </div>
@@ -135,7 +143,8 @@ function Contact() {
                 Message
               </label>
               <textarea
-                rows="3" placeholder="Enter Message Here..."
+                rows="3"
+                placeholder="Enter Message Here..."
                 className="border p-2 rounded w-full focus:ring focus:ring-orange-300"
               ></textarea>
             </div>

@@ -12,7 +12,9 @@
   "dependencies": {
     "@auth0/auth0-react": "^2.3.0",
     "@tailwindcss/vite": "^4.0.15",
+    "aos": "^2.3.4",
     "crypto-js": "^4.2.0",
+    "framer-motion": "^12.6.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-icons": "^5.5.0",
