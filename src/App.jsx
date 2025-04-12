@@ -25,18 +25,18 @@ function App() {
       <Routes>
 
         <Route path='/' element={<ProtectedRoutes  components={ <Home/>}/>}/>
-        <Route path='/about' element={ <Home/>}/>
-        <Route path='/allergyadvice' element={ <Home/>} />
+        <Route path='/about' element={ <About/>}/>
+        <Route path='/allergyadvice' element={ <AllergyAdvice/>} />
         <Route path='/contact' element={<Contact />} />
         <Route path="/menu" element={ <Menu/>}/>
-        <Route path='/services' element={ <Home/>}/>
+        <Route path='/services' element={ <Services/>}/>
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/payment' element={<Payment />} />
         <Route path='/sucess' element={<Sucess />} />
         <Route path='/failure' element={<Failure />} />
         <Route path='/productdescription/:id' element={<ProductDescription />} />
-        <Route path='/cartPage' element={<ProtectedRoutes  components={ <Home/>}/>}/>
+        <Route path='/cartPage' element={ <Home/>}/>
         <Route path='/profile' element={<Profile/>} />
       </Routes>
       <Footer />
