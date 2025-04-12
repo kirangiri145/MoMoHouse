@@ -1,4 +1,3 @@
-
 import Momo from "../assets/Home/Momo.png";
 import OneBg from "../assets/Home/OneBg.png";
 import Man from "../assets/Home/Man.png";
@@ -49,25 +48,25 @@ function Home() {
 
   return (
     <div>
-      <div className="flex justify-end  ">
-        <div className=" mr-48  mt-28 pt-7 ">
+      <div className="flex flex-col md:flex-row justify-end items-center md:items-start">
+        <div className="mt-28 pt-7 md:mr-48 text-center md:text-left">
           <div>
-            <p className="font-Roboto">RESTAURANT</p>
-            <h1 className="text-[61px]   flex ">
+            <p className="font-Roboto text-xl md:text-2xl">RESTAURANT</p>
+            <h1 className="text-4xl md:text-[61px] flex justify-center md:justify-start">
               The
               <span
-                style={{ backgroundImage: `url(${OneBg}) ` }}
-                className="h-20 text-white bg-bottom bg-no-repeat w-48 flex  justify-center items-center  border-2"
+                style={{ backgroundImage: `url(${OneBg})` }}
+                className="h-12 md:h-20 text-white bg-bottom bg-no-repeat w-32 md:w-48 flex justify-center items-center border-2"
               >
                 #One
               </span>
             </h1>
-            <h1 className="text-[61px] ">
+            <h1 className="text-4xl md:text-[61px]">
               Momo <span className="text-[#D95103]">Restaurant</span>
             </h1>
-            <p className="text-[20px] font-medium     ">
+            <p className="text-lg md:text-[20px] font-medium">
               More than
-              <span className="text-[#D95103]  mx-2 text-[20px] ">
+              <span className="text-[#D95103] mx-2 text-[20px]">
                 20+ Varieties
               </span>
               of momo available for you
@@ -76,44 +75,45 @@ function Home() {
 
           <NavigateToMenu />
         </div>
-        <div className="  mt-8  overflow-hidden  w-96  relative   flex justify-end ">
+        <div className="mt-8 overflow-hidden w-96 relative flex justify-center md:justify-end">
           <img
-            className="h-52 top-14 left-8 absolute  "
+            className="h-32 md:h-52 top-14 left-8 absolute"
             src={Momo}
             alt="Momo"
           />
-          <img className="h-96  -mt-4   " src={Circle} alt="circle" />
+          <img
+            className="h-52 md:h-96 -mt-4 md:-mt-0"
+            src={Circle}
+            alt="circle"
+          />
         </div>
       </div>
-
-      <div>
-        <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12">
-          <div className="w-full md:w-1/2 flex justify-center relative">
-            <div className="bg-white rounded-lg w-full max-w-md p-6 flex justify-center items-center shadow-lg">
-              <img
-                src={Man}
-                alt="Man"
-                className="w-full object-cover rounded-lg"
-              />
-            </div>
+      <div className="flex flex-col md:flex-row items-center gap-8 p-6 md:p-12">
+        <div className="w-full md:w-1/2 flex justify-center relative">
+          <div className="bg-white rounded-lg w-full max-w-md p-6 flex justify-center items-center shadow-lg">
+            <img
+              src={Man}
+              alt="Man"
+              className="w-full object-cover rounded-lg"
+            />
           </div>
-          <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
-            <h1 className="text-3xl font-bold text-gray-900">
-              Why Customers <span className="text-orange-600">Love Us</span>
-            </h1>
-            <p className="text-gray-600">
-              Lorem ipsum dolor sit amet consectetur. Sed diam dolor vivamus
-              nibh fermentum vulputate tortor. Egestas facilisi luctus turpis
-              arcu dignissim. Amet neque enim etiam purus id. Tortor sit orci
-              blandit cursus turpis.
-            </p>
+        </div>
+        <div className="w-full md:w-1/2 text-center md:text-left space-y-4">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
+            Why Customers <span className="text-orange-600">Love Us</span>
+          </h1>
+          <p className="text-gray-600">
+            Lorem ipsum dolor sit amet consectetur. Sed diam dolor vivamus nibh
+            fermentum vulputate tortor. Egestas facilisi luctus turpis arcu
+            dignissim. Amet neque enim etiam purus id. Tortor sit orci blandit
+            cursus turpis.
+          </p>
 
-            <NavLink to="/menu">
-              <button className="flex items-center gap-2 bg-[#0C6967] text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
-                Explore Our Story <BsArrowRightShort className="text-xl" />
-              </button>
-            </NavLink>
-          </div>
+          <NavLink to="/menu">
+            <button className="flex items-center gap-2 bg-[#0C6967] text-white px-6 py-3 rounded-full shadow-md hover:bg-green-700 transition-all">
+              Explore Our Story <BsArrowRightShort className="text-xl" />
+            </button>
+          </NavLink>
         </div>
       </div>
 
