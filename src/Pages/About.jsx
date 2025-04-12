@@ -46,7 +46,7 @@ function About() {
         className="relative w-full h-[400px] bg-cover bg-center shadow-gray-800"
         style={{ backgroundImage: `url(${Worker})` }}
       >
-        <div className="absolute inset-0 bg-black bg-opacity-40" />
+        <div className="absolute inset-0  bg-opacity-40" />
         <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center px-4 md:px-6">
           <h3 className="text-2xl font-bold drop-shadow-lg">
             Process behind the making
