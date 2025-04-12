@@ -14,12 +14,12 @@ createRoot(document.getElementById("root")).render(
         domain="dev-yfzi7kdprn128ubs.us.auth0.com"
         clientId="Xf9CaTE1aQebSwOfzkJyniZWwPnPY9b0"
         authorizationParams={{
-          redirect_uri: window.location.origin
+          redirect_uri: window.location.origin,
         }}
       >
         <App />
-      </Auth0Provider>,
-
+      </Auth0Provider>
+      ,
       <ToastContainer
         position="top-right"
         autoClose={5000}
@@ -34,6 +34,5 @@ createRoot(document.getElementById("root")).render(
         transition={Bounce}
       />
     </CartProvider>
-
   </BrowserRouter>
 );
