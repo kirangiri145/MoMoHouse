@@ -17,7 +17,7 @@ function Navigation() {
   let totalItem = state.items.reduce((acc, product) => acc + product.qty, 0);
 
   return (
-    <div className="shadow-2xl text-[17px] fixed w-full bg-white z-10 top-0 left-0 p-2">
+    <div className="shadow-2xl text-[17px] fixed w-full bg-white z-10 top-0 p left-0 p-2">
       <div className="flex justify-between items-center px-4">
         <div className="flex gap-x-2 items-center">
           <img src={momologo} alt="" className="h-10" />

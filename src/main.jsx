@@ -12,14 +12,13 @@ createRoot(document.getElementById("root")).render(
     <CartProvider>
       <Auth0Provider
         domain="dev-yfzi7kdprn128ubs.us.auth0.com"
-        clientId="Xf9CaTE1aQebSwOfzkJyniZWwPnPY9b0"
+        clientId="LxspXNFvlV6w3UdkxgwW8rYUQql8xulp"
         authorizationParams={{
-          redirect_uri: window.location.origin,
+          redirect_uri: window.location.origin
         }}
       >
         <App />
-      </Auth0Provider>
-      ,
+      </Auth0Provider>,
       <ToastContainer
         position="top-right"
         autoClose={5000}
